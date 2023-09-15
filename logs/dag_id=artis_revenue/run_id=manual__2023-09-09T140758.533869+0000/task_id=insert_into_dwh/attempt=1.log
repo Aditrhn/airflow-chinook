@@ -1,0 +1,59 @@
+[2023-09-09T14:08:01.176+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: artis_revenue.insert_into_dwh manual__2023-09-09T14:07:58.533869+00:00 [queued]>
+[2023-09-09T14:08:01.182+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: artis_revenue.insert_into_dwh manual__2023-09-09T14:07:58.533869+00:00 [queued]>
+[2023-09-09T14:08:01.183+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-09-09T14:08:01.193+0000] {taskinstance.py:1382} INFO - Executing <Task(GenericTransfer): insert_into_dwh> on 2023-09-09 14:07:58.533869+00:00
+[2023-09-09T14:08:01.197+0000] {standard_task_runner.py:57} INFO - Started process 250 to run task
+[2023-09-09T14:08:01.201+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'artis_revenue', 'insert_into_dwh', 'manual__2023-09-09T14:07:58.533869+00:00', '--job-id', '65', '--raw', '--subdir', 'DAGS_FOLDER/artist_revenue.py', '--cfg-path', '/tmp/tmp35mqfqqn']
+[2023-09-09T14:08:01.203+0000] {standard_task_runner.py:85} INFO - Job 65: Subtask insert_into_dwh
+[2023-09-09T14:08:01.235+0000] {task_command.py:415} INFO - Running <TaskInstance: artis_revenue.insert_into_dwh manual__2023-09-09T14:07:58.533869+00:00 [running]> on host 80a7ead3f1b6
+[2023-09-09T14:08:01.285+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Aditiya Rahman' AIRFLOW_CTX_DAG_ID='artis_revenue' AIRFLOW_CTX_TASK_ID='insert_into_dwh' AIRFLOW_CTX_EXECUTION_DATE='2023-09-09T14:07:58.533869+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-09-09T14:07:58.533869+00:00'
+[2023-09-09T14:08:01.293+0000] {base.py:73} INFO - Using connection ID 'postgres' for task execution.
+[2023-09-09T14:08:01.300+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-09T14:08:01.300+0000] {generic_transfer.py:77} INFO - Extracting data from postgres
+[2023-09-09T14:08:01.301+0000] {generic_transfer.py:78} INFO - Executing: 
+ 
+SELECT a."ArtistId", 
+       a."Name", 
+       b."Title", 
+       c."Name", 
+       (d."Quantity" * d."UnitPrice"),
+       d."InvoiceLineId",
+       e."InvoiceId",
+       e."InvoiceDate"
+FROM "Artist" a
+JOIN "Album" b
+ON a."ArtistId" = b."ArtistId"
+JOIN "Track" c
+ON b."AlbumId" = c."AlbumId"
+JOIN "InvoiceLine" d
+ON c."TrackId" = d."TrackId"
+JOIN "Invoice" e
+ON d."InvoiceId" = e."InvoiceId"
+[2023-09-09T14:08:01.306+0000] {base.py:73} INFO - Using connection ID 'postgres' for task execution.
+[2023-09-09T14:08:01.308+0000] {sql.py:418} INFO - Running statement: 
+SELECT a."ArtistId", 
+       a."Name", 
+       b."Title", 
+       c."Name", 
+       (d."Quantity" * d."UnitPrice"),
+       d."InvoiceLineId",
+       e."InvoiceId",
+       e."InvoiceDate"
+FROM "Artist" a
+JOIN "Album" b
+ON a."ArtistId" = b."ArtistId"
+JOIN "Track" c
+ON b."AlbumId" = c."AlbumId"
+JOIN "InvoiceLine" d
+ON c."TrackId" = d."TrackId"
+JOIN "Invoice" e
+ON d."InvoiceId" = e."InvoiceId", parameters: None
+[2023-09-09T14:08:01.313+0000] {sql.py:427} INFO - Rows affected: 2240
+[2023-09-09T14:08:01.319+0000] {generic_transfer.py:105} INFO - Inserting rows into datawarehouse
+[2023-09-09T14:08:01.324+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-09T14:08:01.448+0000] {sql.py:512} INFO - Loaded 1000 rows into artist_revenue so far
+[2023-09-09T14:08:01.572+0000] {sql.py:512} INFO - Loaded 2000 rows into artist_revenue so far
+[2023-09-09T14:08:01.602+0000] {sql.py:515} INFO - Done loading. Loaded a total of 2240 rows into artist_revenue
+[2023-09-09T14:08:01.608+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=artis_revenue, task_id=insert_into_dwh, execution_date=20230909T140758, start_date=20230909T140801, end_date=20230909T140801
+[2023-09-09T14:08:01.653+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-09-09T14:08:01.664+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

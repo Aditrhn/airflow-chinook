@@ -1,0 +1,27 @@
+[2023-09-11T16:15:30.921+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: business_question.most_productive_artist manual__2023-09-11T16:15:28.058380+00:00 [queued]>
+[2023-09-11T16:15:30.928+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: business_question.most_productive_artist manual__2023-09-11T16:15:28.058380+00:00 [queued]>
+[2023-09-11T16:15:30.929+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-09-11T16:15:30.944+0000] {taskinstance.py:1382} INFO - Executing <Task(PostgresOperator): most_productive_artist> on 2023-09-11 16:15:28.058380+00:00
+[2023-09-11T16:15:30.949+0000] {standard_task_runner.py:57} INFO - Started process 1988 to run task
+[2023-09-11T16:15:30.952+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'business_question', 'most_productive_artist', 'manual__2023-09-11T16:15:28.058380+00:00', '--job-id', '141', '--raw', '--subdir', 'DAGS_FOLDER/business_question.py', '--cfg-path', '/tmp/tmpcznqole1']
+[2023-09-11T16:15:30.954+0000] {standard_task_runner.py:85} INFO - Job 141: Subtask most_productive_artist
+[2023-09-11T16:15:30.995+0000] {task_command.py:415} INFO - Running <TaskInstance: business_question.most_productive_artist manual__2023-09-11T16:15:28.058380+00:00 [running]> on host bdff3168b881
+[2023-09-11T16:15:31.055+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Aditiya Rahman' AIRFLOW_CTX_DAG_ID='business_question' AIRFLOW_CTX_TASK_ID='most_productive_artist' AIRFLOW_CTX_EXECUTION_DATE='2023-09-11T16:15:28.058380+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-09-11T16:15:28.058380+00:00'
+[2023-09-11T16:15:31.057+0000] {sql.py:274} INFO - Executing: 
+    SELECT "ArtistId", "ArtistName", COUNT("TrackId") as "TotalTrack"
+    FROM "songs"
+    GROUP BY "ArtistId", "ArtistName"
+    ORDER BY "TotalTrack" DESC
+    
+[2023-09-11T16:15:31.062+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-11T16:15:31.068+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-11T16:15:31.071+0000] {sql.py:418} INFO - Running statement: 
+    SELECT "ArtistId", "ArtistName", COUNT("TrackId") as "TotalTrack"
+    FROM "songs"
+    GROUP BY "ArtistId", "ArtistName"
+    ORDER BY "TotalTrack" DESC
+    , parameters: None
+[2023-09-11T16:15:31.074+0000] {sql.py:427} INFO - Rows affected: 204
+[2023-09-11T16:15:31.096+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=business_question, task_id=most_productive_artist, execution_date=20230911T161528, start_date=20230911T161530, end_date=20230911T161531
+[2023-09-11T16:15:31.124+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-09-11T16:15:31.145+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check

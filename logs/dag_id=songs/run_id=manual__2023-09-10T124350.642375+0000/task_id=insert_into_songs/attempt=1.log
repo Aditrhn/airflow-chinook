@@ -1,0 +1,78 @@
+[2023-09-10T12:43:51.733+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: songs.insert_into_songs manual__2023-09-10T12:43:50.642375+00:00 [queued]>
+[2023-09-10T12:43:51.737+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: songs.insert_into_songs manual__2023-09-10T12:43:50.642375+00:00 [queued]>
+[2023-09-10T12:43:51.738+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-09-10T12:43:51.747+0000] {taskinstance.py:1382} INFO - Executing <Task(GenericTransfer): insert_into_songs> on 2023-09-10 12:43:50.642375+00:00
+[2023-09-10T12:43:51.751+0000] {standard_task_runner.py:57} INFO - Started process 3535 to run task
+[2023-09-10T12:43:51.753+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'songs', 'insert_into_songs', 'manual__2023-09-10T12:43:50.642375+00:00', '--job-id', '95', '--raw', '--subdir', 'DAGS_FOLDER/songs.py', '--cfg-path', '/tmp/tmpsjxrr884']
+[2023-09-10T12:43:51.755+0000] {standard_task_runner.py:85} INFO - Job 95: Subtask insert_into_songs
+[2023-09-10T12:43:51.783+0000] {task_command.py:415} INFO - Running <TaskInstance: songs.insert_into_songs manual__2023-09-10T12:43:50.642375+00:00 [running]> on host 80a7ead3f1b6
+[2023-09-10T12:43:51.837+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Aditiya Rahman' AIRFLOW_CTX_DAG_ID='songs' AIRFLOW_CTX_TASK_ID='insert_into_songs' AIRFLOW_CTX_EXECUTION_DATE='2023-09-10T12:43:50.642375+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-09-10T12:43:50.642375+00:00'
+[2023-09-10T12:43:51.843+0000] {base.py:73} INFO - Using connection ID 'postgres' for task execution.
+[2023-09-10T12:43:51.853+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-10T12:43:51.854+0000] {generic_transfer.py:77} INFO - Extracting data from postgres
+[2023-09-10T12:43:51.854+0000] {generic_transfer.py:78} INFO - Executing: 
+ 
+SELECT a."ArtistId", 
+       a."Name", 
+       b."AlbumId",
+       b."Title",
+       c."TrackId", 
+       c."Name", 
+       c."UnitPrice",
+       c."Bytes",
+       d."GenreId",
+       d."Name"
+FROM "Artist" a
+JOIN "Album" b
+ON a."ArtistId" = b."ArtistId"
+JOIN "Track" c
+ON b."AlbumId" = c."AlbumId"
+JOIN "Genre" d
+ON c."GenreId" = d."GenreId"
+[2023-09-10T12:43:51.858+0000] {base.py:73} INFO - Using connection ID 'postgres' for task execution.
+[2023-09-10T12:43:51.860+0000] {sql.py:418} INFO - Running statement: 
+SELECT a."ArtistId", 
+       a."Name", 
+       b."AlbumId",
+       b."Title",
+       c."TrackId", 
+       c."Name", 
+       c."UnitPrice",
+       c."Bytes",
+       d."GenreId",
+       d."Name"
+FROM "Artist" a
+JOIN "Album" b
+ON a."ArtistId" = b."ArtistId"
+JOIN "Track" c
+ON b."AlbumId" = c."AlbumId"
+JOIN "Genre" d
+ON c."GenreId" = d."GenreId", parameters: None
+[2023-09-10T12:43:51.864+0000] {sql.py:427} INFO - Rows affected: 3503
+[2023-09-10T12:43:51.868+0000] {generic_transfer.py:95} INFO - Running preoperator
+[2023-09-10T12:43:51.868+0000] {generic_transfer.py:96} INFO - ['DROP TABLE IF EXISTS songs', '\n        CREATE TABLE songs (\n        Artist_Id INT NOT NULL,\n        Artist_Name VARCHAR(120),\n        Album_Id INT NOT NULL,\n        Album_Title VARCHAR(160) NOT NULL,\n        Track_Id INT NOT NULL,\n        Track_Name VARCHAR(200) NOT NULL,\n        Track_Unit_Price NUMERIC(10,2) NOT NULL,\n        Track_Bytes INT,\n        Genre_Id INT NOT NULL,\n        Genre_Name VARCHAR(120)\n        )\n        ']
+[2023-09-10T12:43:51.872+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-10T12:43:51.874+0000] {sql.py:418} INFO - Running statement: DROP TABLE IF EXISTS songs, parameters: None
+[2023-09-10T12:43:51.875+0000] {sql.py:418} INFO - Running statement: 
+        CREATE TABLE songs (
+        Artist_Id INT NOT NULL,
+        Artist_Name VARCHAR(120),
+        Album_Id INT NOT NULL,
+        Album_Title VARCHAR(160) NOT NULL,
+        Track_Id INT NOT NULL,
+        Track_Name VARCHAR(200) NOT NULL,
+        Track_Unit_Price NUMERIC(10,2) NOT NULL,
+        Track_Bytes INT,
+        Genre_Id INT NOT NULL,
+        Genre_Name VARCHAR(120)
+        )
+        , parameters: None
+[2023-09-10T12:43:51.893+0000] {generic_transfer.py:105} INFO - Inserting rows into datawarehouse
+[2023-09-10T12:43:51.897+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-10T12:43:52.004+0000] {sql.py:512} INFO - Loaded 1000 rows into songs so far
+[2023-09-10T12:43:52.115+0000] {sql.py:512} INFO - Loaded 2000 rows into songs so far
+[2023-09-10T12:43:52.226+0000] {sql.py:512} INFO - Loaded 3000 rows into songs so far
+[2023-09-10T12:43:52.283+0000] {sql.py:515} INFO - Done loading. Loaded a total of 3503 rows into songs
+[2023-09-10T12:43:52.289+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=songs, task_id=insert_into_songs, execution_date=20230910T124350, start_date=20230910T124351, end_date=20230910T124352
+[2023-09-10T12:43:52.326+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-09-10T12:43:52.338+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

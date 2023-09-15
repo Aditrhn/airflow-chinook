@@ -1,0 +1,27 @@
+[2023-09-13T12:14:58.993+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: business_question.artist_earnings scheduled__2023-09-12T02:00:00+00:00 [queued]>
+[2023-09-13T12:14:58.999+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: business_question.artist_earnings scheduled__2023-09-12T02:00:00+00:00 [queued]>
+[2023-09-13T12:14:58.999+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-09-13T12:14:59.012+0000] {taskinstance.py:1382} INFO - Executing <Task(PostgresOperator): artist_earnings> on 2023-09-12 02:00:00+00:00
+[2023-09-13T12:14:59.017+0000] {standard_task_runner.py:57} INFO - Started process 83 to run task
+[2023-09-13T12:14:59.019+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'business_question', 'artist_earnings', 'scheduled__2023-09-12T02:00:00+00:00', '--job-id', '155', '--raw', '--subdir', 'DAGS_FOLDER/business_question.py', '--cfg-path', '/tmp/tmp56l3gjs_']
+[2023-09-13T12:14:59.021+0000] {standard_task_runner.py:85} INFO - Job 155: Subtask artist_earnings
+[2023-09-13T12:14:59.052+0000] {task_command.py:415} INFO - Running <TaskInstance: business_question.artist_earnings scheduled__2023-09-12T02:00:00+00:00 [running]> on host bdff3168b881
+[2023-09-13T12:14:59.105+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Aditiya Rahman' AIRFLOW_CTX_DAG_ID='business_question' AIRFLOW_CTX_TASK_ID='artist_earnings' AIRFLOW_CTX_EXECUTION_DATE='2023-09-12T02:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-09-12T02:00:00+00:00'
+[2023-09-13T12:14:59.106+0000] {sql.py:274} INFO - Executing: 
+    SELECT "ArtistId", "ArtistName", SUM("TotalPrice") as "Earnings"
+    FROM "artist_revenue"
+    GROUP BY "ArtistId", "ArtistName"
+    ORDER BY "Earnings" DESC
+    
+[2023-09-13T12:14:59.110+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-13T12:14:59.114+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-13T12:14:59.116+0000] {sql.py:418} INFO - Running statement: 
+    SELECT "ArtistId", "ArtistName", SUM("TotalPrice") as "Earnings"
+    FROM "artist_revenue"
+    GROUP BY "ArtistId", "ArtistName"
+    ORDER BY "Earnings" DESC
+    , parameters: None
+[2023-09-13T12:14:59.118+0000] {sql.py:427} INFO - Rows affected: 165
+[2023-09-13T12:14:59.135+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=business_question, task_id=artist_earnings, execution_date=20230912T020000, start_date=20230913T121458, end_date=20230913T121459
+[2023-09-13T12:14:59.191+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-09-13T12:14:59.206+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check

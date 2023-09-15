@@ -1,0 +1,30 @@
+[2023-09-09T14:12:07.781+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: artis_revenue.delete_table_if_exists manual__2023-09-09T14:12:06.848607+00:00 [queued]>
+[2023-09-09T14:12:07.786+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: artis_revenue.delete_table_if_exists manual__2023-09-09T14:12:06.848607+00:00 [queued]>
+[2023-09-09T14:12:07.787+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-09-09T14:12:07.796+0000] {taskinstance.py:1382} INFO - Executing <Task(PostgresOperator): delete_table_if_exists> on 2023-09-09 14:12:06.848607+00:00
+[2023-09-09T14:12:07.800+0000] {standard_task_runner.py:57} INFO - Started process 328 to run task
+[2023-09-09T14:12:07.803+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'artis_revenue', 'delete_table_if_exists', 'manual__2023-09-09T14:12:06.848607+00:00', '--job-id', '70', '--raw', '--subdir', 'DAGS_FOLDER/artist_revenue.py', '--cfg-path', '/tmp/tmpu1c0af24']
+[2023-09-09T14:12:07.805+0000] {standard_task_runner.py:85} INFO - Job 70: Subtask delete_table_if_exists
+[2023-09-09T14:12:07.834+0000] {task_command.py:415} INFO - Running <TaskInstance: artis_revenue.delete_table_if_exists manual__2023-09-09T14:12:06.848607+00:00 [running]> on host 80a7ead3f1b6
+[2023-09-09T14:12:07.883+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Aditiya Rahman' AIRFLOW_CTX_DAG_ID='artis_revenue' AIRFLOW_CTX_TASK_ID='delete_table_if_exists' AIRFLOW_CTX_EXECUTION_DATE='2023-09-09T14:12:06.848607+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-09-09T14:12:06.848607+00:00'
+[2023-09-09T14:12:07.885+0000] {sql.py:274} INFO - Executing: 
+DROP TABLE "artist_revenue;"
+[2023-09-09T14:12:07.890+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-09T14:12:07.896+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-09T14:12:07.898+0000] {sql.py:418} INFO - Running statement: 
+DROP TABLE "artist_revenue;", parameters: None
+[2023-09-09T14:12:07.899+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/operators/sql.py", line 280, in execute
+    output = hook.run(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 392, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 423, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.UndefinedTable: table "artist_revenue;" does not exist
+
+[2023-09-09T14:12:07.905+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=artis_revenue, task_id=delete_table_if_exists, execution_date=20230909T141206, start_date=20230909T141207, end_date=20230909T141207
+[2023-09-09T14:12:07.914+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 70 for task delete_table_if_exists (table "artist_revenue;" does not exist
+; 328)
+[2023-09-09T14:12:07.934+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-09-09T14:12:07.949+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

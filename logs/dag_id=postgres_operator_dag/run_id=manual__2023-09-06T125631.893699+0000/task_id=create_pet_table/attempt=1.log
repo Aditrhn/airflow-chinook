@@ -1,0 +1,21 @@
+[2023-09-06T12:56:33.674+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: postgres_operator_dag.create_pet_table manual__2023-09-06T12:56:31.893699+00:00 [queued]>
+[2023-09-06T12:56:33.679+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: postgres_operator_dag.create_pet_table manual__2023-09-06T12:56:31.893699+00:00 [queued]>
+[2023-09-06T12:56:33.679+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-09-06T12:56:33.689+0000] {taskinstance.py:1382} INFO - Executing <Task(PostgresOperator): create_pet_table> on 2023-09-06 12:56:31.893699+00:00
+[2023-09-06T12:56:33.694+0000] {standard_task_runner.py:57} INFO - Started process 359 to run task
+[2023-09-06T12:56:33.696+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'postgres_operator_dag', 'create_pet_table', 'manual__2023-09-06T12:56:31.893699+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/postgres_operator.py', '--cfg-path', '/tmp/tmp2cekihet']
+[2023-09-06T12:56:33.697+0000] {standard_task_runner.py:85} INFO - Job 11: Subtask create_pet_table
+[2023-09-06T12:56:33.730+0000] {task_command.py:415} INFO - Running <TaskInstance: postgres_operator_dag.create_pet_table manual__2023-09-06T12:56:31.893699+00:00 [running]> on host 80a7ead3f1b6
+[2023-09-06T12:56:33.775+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='postgres_operator_dag' AIRFLOW_CTX_TASK_ID='create_pet_table' AIRFLOW_CTX_EXECUTION_DATE='2023-09-06T12:56:31.893699+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-09-06T12:56:31.893699+00:00'
+[2023-09-06T12:56:33.776+0000] {sql.py:274} INFO - Executing: 
+            SELECT * FROM "Album";
+          
+[2023-09-06T12:56:33.781+0000] {base.py:73} INFO - Using connection ID 'postgres' for task execution.
+[2023-09-06T12:56:33.786+0000] {base.py:73} INFO - Using connection ID 'postgres' for task execution.
+[2023-09-06T12:56:33.788+0000] {sql.py:418} INFO - Running statement: 
+            SELECT * FROM "Album";
+          , parameters: None
+[2023-09-06T12:56:33.789+0000] {sql.py:427} INFO - Rows affected: 347
+[2023-09-06T12:56:33.805+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=postgres_operator_dag, task_id=create_pet_table, execution_date=20230906T125631, start_date=20230906T125633, end_date=20230906T125633
+[2023-09-06T12:56:33.828+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-09-06T12:56:33.839+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

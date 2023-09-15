@@ -1,0 +1,27 @@
+[2023-09-11T15:53:02.170+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: business_question.city_with_most_purchases manual__2023-09-11T15:52:57.117545+00:00 [queued]>
+[2023-09-11T15:53:02.177+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: business_question.city_with_most_purchases manual__2023-09-11T15:52:57.117545+00:00 [queued]>
+[2023-09-11T15:53:02.177+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-09-11T15:53:02.195+0000] {taskinstance.py:1382} INFO - Executing <Task(PostgresOperator): city_with_most_purchases> on 2023-09-11 15:52:57.117545+00:00
+[2023-09-11T15:53:02.200+0000] {standard_task_runner.py:57} INFO - Started process 1639 to run task
+[2023-09-11T15:53:02.202+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'business_question', 'city_with_most_purchases', 'manual__2023-09-11T15:52:57.117545+00:00', '--job-id', '137', '--raw', '--subdir', 'DAGS_FOLDER/business_question.py', '--cfg-path', '/tmp/tmpa938y4_w']
+[2023-09-11T15:53:02.205+0000] {standard_task_runner.py:85} INFO - Job 137: Subtask city_with_most_purchases
+[2023-09-11T15:53:02.245+0000] {task_command.py:415} INFO - Running <TaskInstance: business_question.city_with_most_purchases manual__2023-09-11T15:52:57.117545+00:00 [running]> on host bdff3168b881
+[2023-09-11T15:53:02.301+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Aditiya Rahman' AIRFLOW_CTX_DAG_ID='business_question' AIRFLOW_CTX_TASK_ID='city_with_most_purchases' AIRFLOW_CTX_EXECUTION_DATE='2023-09-11T15:52:57.117545+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-09-11T15:52:57.117545+00:00'
+[2023-09-11T15:53:02.303+0000] {sql.py:274} INFO - Executing: 
+    SELECT "City", COUNT("InvoiceId") as "TotalPurchases"
+    FROM "transactions"
+    GROUP BY "City"
+    ORDER BY "TotalPurchases" DESC
+    
+[2023-09-11T15:53:02.309+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-11T15:53:02.317+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-11T15:53:02.320+0000] {sql.py:418} INFO - Running statement: 
+    SELECT "City", COUNT("InvoiceId") as "TotalPurchases"
+    FROM "transactions"
+    GROUP BY "City"
+    ORDER BY "TotalPurchases" DESC
+    , parameters: None
+[2023-09-11T15:53:02.322+0000] {sql.py:427} INFO - Rows affected: 53
+[2023-09-11T15:53:02.341+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=business_question, task_id=city_with_most_purchases, execution_date=20230911T155257, start_date=20230911T155302, end_date=20230911T155302
+[2023-09-11T15:53:02.375+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-09-11T15:53:02.390+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

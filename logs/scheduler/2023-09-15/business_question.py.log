@@ -1,0 +1,224 @@
+[2023-09-15T13:34:34.338+0000] {processor.py:157} INFO - Started process (PID=38) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:34:34.339+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:34:34.341+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:34:34.341+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:34:34.370+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:34:34.412+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:34:34.412+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:34:34.440+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:34:34.440+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-14T02:00:00+00:00, run_after=2023-09-15T02:00:00+00:00
+[2023-09-15T13:34:34.462+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.127 seconds
+[2023-09-15T13:35:04.695+0000] {processor.py:157} INFO - Started process (PID=123) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:35:04.696+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:35:04.697+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:35:04.697+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:35:04.715+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:35:04.728+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:35:04.727+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:35:04.837+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:35:04.837+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:35:04.850+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.158 seconds
+[2023-09-15T13:35:34.920+0000] {processor.py:157} INFO - Started process (PID=181) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:35:34.921+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:35:34.922+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:35:34.922+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:35:34.939+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:35:34.952+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:35:34.952+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:35:34.966+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:35:34.966+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:35:34.981+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.063 seconds
+[2023-09-15T13:36:05.218+0000] {processor.py:157} INFO - Started process (PID=239) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:36:05.218+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:36:05.220+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:36:05.220+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:36:05.237+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:36:05.250+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:36:05.250+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:36:05.264+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:36:05.264+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:36:05.279+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.063 seconds
+[2023-09-15T13:36:35.543+0000] {processor.py:157} INFO - Started process (PID=297) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:36:35.544+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:36:35.545+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:36:35.545+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:36:35.567+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:36:35.581+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:36:35.581+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:36:35.594+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:36:35.594+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:36:35.612+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.072 seconds
+[2023-09-15T13:37:05.894+0000] {processor.py:157} INFO - Started process (PID=355) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:37:05.895+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:37:05.896+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:37:05.896+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:37:05.914+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:37:05.926+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:37:05.926+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:37:05.940+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:37:05.940+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:37:05.954+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.063 seconds
+[2023-09-15T13:37:36.174+0000] {processor.py:157} INFO - Started process (PID=413) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:37:36.175+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:37:36.176+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:37:36.176+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:37:36.196+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:37:36.208+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:37:36.208+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:37:36.223+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:37:36.222+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:37:36.237+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.065 seconds
+[2023-09-15T13:38:06.492+0000] {processor.py:157} INFO - Started process (PID=471) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:38:06.492+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:38:06.494+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:38:06.493+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:38:06.514+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:38:06.526+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:38:06.526+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:38:06.540+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:38:06.540+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:38:06.558+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.069 seconds
+[2023-09-15T13:38:37.008+0000] {processor.py:157} INFO - Started process (PID=529) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:38:37.008+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:38:37.010+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:38:37.010+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:38:37.029+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:38:37.042+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:38:37.042+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:38:37.058+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:38:37.058+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:38:37.073+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.068 seconds
+[2023-09-15T13:39:07.504+0000] {processor.py:157} INFO - Started process (PID=587) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:39:07.505+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:39:07.507+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:39:07.506+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:39:07.523+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:39:07.536+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:39:07.535+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:39:07.550+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:39:07.550+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:39:07.564+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.061 seconds
+[2023-09-15T13:39:37.996+0000] {processor.py:157} INFO - Started process (PID=645) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:39:37.996+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:39:37.998+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:39:37.998+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:39:38.016+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:39:38.029+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:39:38.028+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:39:38.043+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:39:38.043+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:39:38.061+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.067 seconds
+[2023-09-15T13:40:08.420+0000] {processor.py:157} INFO - Started process (PID=703) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:40:08.420+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:40:08.422+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:40:08.422+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:40:08.444+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:40:08.461+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:40:08.461+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:40:08.479+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:40:08.479+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:40:08.493+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.077 seconds
+[2023-09-15T13:40:38.958+0000] {processor.py:157} INFO - Started process (PID=761) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:40:38.959+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:40:38.960+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:40:38.960+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:40:38.981+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:40:38.993+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:40:38.993+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:40:39.008+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:40:39.008+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:40:39.026+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.070 seconds
+[2023-09-15T13:41:09.334+0000] {processor.py:157} INFO - Started process (PID=819) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:41:09.335+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:41:09.336+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:41:09.336+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:41:09.356+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:41:09.368+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:41:09.368+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:41:09.383+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:41:09.382+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:41:09.397+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.065 seconds
+[2023-09-15T13:41:39.544+0000] {processor.py:157} INFO - Started process (PID=877) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:41:39.544+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:41:39.546+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:41:39.545+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:41:39.564+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:41:39.577+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:41:39.577+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:41:39.591+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:41:39.591+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:41:39.609+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.068 seconds
+[2023-09-15T13:42:09.973+0000] {processor.py:157} INFO - Started process (PID=935) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:42:09.973+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:42:09.975+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:42:09.975+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:42:09.993+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:42:10.005+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:42:10.005+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:42:10.019+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:42:10.019+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:42:10.037+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.066 seconds
+[2023-09-15T13:42:40.397+0000] {processor.py:157} INFO - Started process (PID=993) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:42:40.398+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:42:40.402+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:42:40.402+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:42:40.432+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:42:40.450+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:42:40.450+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:42:40.476+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:42:40.476+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:42:40.502+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.110 seconds
+[2023-09-15T13:43:11.334+0000] {processor.py:157} INFO - Started process (PID=1051) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:43:11.335+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:43:11.336+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:43:11.336+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:43:11.355+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:43:11.368+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:43:11.368+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:43:11.383+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:43:11.383+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:43:11.403+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.070 seconds
+[2023-09-15T13:43:41.796+0000] {processor.py:157} INFO - Started process (PID=1109) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:43:41.796+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:43:41.798+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:43:41.798+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:43:41.818+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:43:41.831+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:43:41.831+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:43:41.846+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:43:41.845+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:43:41.863+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.069 seconds
+[2023-09-15T13:44:12.157+0000] {processor.py:157} INFO - Started process (PID=1167) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:44:12.158+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:44:12.161+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:44:12.160+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:44:12.181+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:44:12.196+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:44:12.196+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:44:12.213+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:44:12.213+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:44:12.234+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.081 seconds
+[2023-09-15T13:44:42.443+0000] {processor.py:157} INFO - Started process (PID=1225) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:44:42.444+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:44:42.446+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:44:42.446+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:44:42.465+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:44:42.479+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:44:42.479+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:44:42.495+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:44:42.495+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:44:42.522+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.081 seconds
+[2023-09-15T13:45:12.825+0000] {processor.py:157} INFO - Started process (PID=1283) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:45:12.826+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:45:12.827+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:45:12.827+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:45:12.846+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:45:12.858+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:45:12.858+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:45:12.872+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:45:12.872+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:45:12.886+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.063 seconds
+[2023-09-15T13:45:43.075+0000] {processor.py:157} INFO - Started process (PID=1341) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:45:43.076+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:45:43.078+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:45:43.078+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:45:43.098+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:45:43.111+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:45:43.111+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:45:43.127+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:45:43.127+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:45:43.145+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.073 seconds
+[2023-09-15T13:46:13.448+0000] {processor.py:157} INFO - Started process (PID=1399) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:46:13.449+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:46:13.451+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:46:13.450+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:46:13.469+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:46:13.481+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:46:13.481+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:46:13.495+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:46:13.495+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:46:13.510+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.064 seconds
+[2023-09-15T13:46:43.687+0000] {processor.py:157} INFO - Started process (PID=1457) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:46:43.687+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:46:43.689+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:46:43.689+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:46:43.708+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:46:43.723+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:46:43.723+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:46:43.737+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:46:43.737+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:46:43.753+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.069 seconds
+[2023-09-15T13:47:14.193+0000] {processor.py:157} INFO - Started process (PID=1516) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:47:14.194+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:47:14.195+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:47:14.195+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:47:14.213+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:47:14.225+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:47:14.225+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:47:14.239+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:47:14.239+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:47:14.256+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.065 seconds
+[2023-09-15T13:47:44.426+0000] {processor.py:157} INFO - Started process (PID=1574) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:47:44.427+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:47:44.428+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:47:44.428+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:47:44.447+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:47:44.460+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:47:44.460+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:47:44.475+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:47:44.474+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:47:44.490+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.066 seconds
+[2023-09-15T13:48:14.909+0000] {processor.py:157} INFO - Started process (PID=1632) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:48:14.910+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:48:14.911+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:48:14.911+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:48:14.930+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:48:14.942+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:48:14.942+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:48:14.957+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:48:14.956+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:48:14.974+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.067 seconds
+[2023-09-15T13:48:45.192+0000] {processor.py:157} INFO - Started process (PID=1690) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:48:45.192+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:48:45.194+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:48:45.194+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:48:45.216+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:48:45.230+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:48:45.230+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:48:45.247+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:48:45.247+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:48:45.264+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.075 seconds
+[2023-09-15T13:49:15.669+0000] {processor.py:157} INFO - Started process (PID=1748) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:49:15.669+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:49:15.671+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:49:15.671+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:49:15.689+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:49:15.702+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:49:15.702+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:49:15.717+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:49:15.716+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:49:15.734+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.067 seconds
+[2023-09-15T13:49:46.024+0000] {processor.py:157} INFO - Started process (PID=1806) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:49:46.024+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:49:46.026+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:49:46.026+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:49:46.047+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:49:46.062+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:49:46.062+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:49:46.078+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:49:46.078+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:49:46.097+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.076 seconds
+[2023-09-15T13:50:16.382+0000] {processor.py:157} INFO - Started process (PID=1864) to work on /opt/airflow/dags/business_question.py
+[2023-09-15T13:50:16.383+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/business_question.py for tasks to queue
+[2023-09-15T13:50:16.384+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:50:16.384+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/business_question.py
+[2023-09-15T13:50:16.403+0000] {processor.py:839} INFO - DAG(s) dict_keys(['business_question']) retrieved from /opt/airflow/dags/business_question.py
+[2023-09-15T13:50:16.416+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:50:16.416+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-15T13:50:16.430+0000] {logging_mixin.py:151} INFO - [2023-09-15T13:50:16.430+0000] {dag.py:3677} INFO - Setting next_dagrun for business_question to 2023-09-15T02:00:00+00:00, run_after=2023-09-16T02:00:00+00:00
+[2023-09-15T13:50:16.446+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/business_question.py took 0.066 seconds

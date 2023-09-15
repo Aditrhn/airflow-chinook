@@ -1,0 +1,42 @@
+[2023-09-13T14:46:03.443+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: business_question.insert_into_most_productive_artist manual__2023-09-13T14:46:00.129015+00:00 [queued]>
+[2023-09-13T14:46:03.448+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: business_question.insert_into_most_productive_artist manual__2023-09-13T14:46:00.129015+00:00 [queued]>
+[2023-09-13T14:46:03.449+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-09-13T14:46:03.457+0000] {taskinstance.py:1382} INFO - Executing <Task(GenericTransfer): insert_into_most_productive_artist> on 2023-09-13 14:46:00.129015+00:00
+[2023-09-13T14:46:03.461+0000] {standard_task_runner.py:57} INFO - Started process 2430 to run task
+[2023-09-13T14:46:03.463+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'business_question', 'insert_into_most_productive_artist', 'manual__2023-09-13T14:46:00.129015+00:00', '--job-id', '166', '--raw', '--subdir', 'DAGS_FOLDER/business_question.py', '--cfg-path', '/tmp/tmpgeqbzve2']
+[2023-09-13T14:46:03.465+0000] {standard_task_runner.py:85} INFO - Job 166: Subtask insert_into_most_productive_artist
+[2023-09-13T14:46:03.495+0000] {task_command.py:415} INFO - Running <TaskInstance: business_question.insert_into_most_productive_artist manual__2023-09-13T14:46:00.129015+00:00 [running]> on host bdff3168b881
+[2023-09-13T14:46:03.555+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Aditiya Rahman' AIRFLOW_CTX_DAG_ID='business_question' AIRFLOW_CTX_TASK_ID='insert_into_most_productive_artist' AIRFLOW_CTX_EXECUTION_DATE='2023-09-13T14:46:00.129015+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-09-13T14:46:00.129015+00:00'
+[2023-09-13T14:46:03.562+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-13T14:46:03.573+0000] {base.py:73} INFO - Using connection ID 'datamart' for task execution.
+[2023-09-13T14:46:03.574+0000] {generic_transfer.py:77} INFO - Extracting data from datawarehouse
+[2023-09-13T14:46:03.574+0000] {generic_transfer.py:78} INFO - Executing: 
+ 
+SELECT "ArtistId", "ArtistName", COUNT("TrackId") AS "TotalTrack"
+FROM "songs"
+GROUP BY "GenreName", "ArtistId", "ArtistName"
+ORDER BY "TotalTrack" DESC
+[2023-09-13T14:46:03.578+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-13T14:46:03.580+0000] {sql.py:418} INFO - Running statement: 
+SELECT "ArtistId", "ArtistName", COUNT("TrackId") AS "TotalTrack"
+FROM "songs"
+GROUP BY "GenreName", "ArtistId", "ArtistName"
+ORDER BY "TotalTrack" DESC, parameters: None
+[2023-09-13T14:46:03.585+0000] {sql.py:427} INFO - Rows affected: 233
+[2023-09-13T14:46:03.585+0000] {generic_transfer.py:95} INFO - Running preoperator
+[2023-09-13T14:46:03.585+0000] {generic_transfer.py:96} INFO - ['DROP TABLE IF EXISTS most_productive_artist', '\n        CREATE TABLE most_productive_artist (\n        "ArtistId" INT NOT NULL,\n        "ArtistName" VARCHAR(120),\n        "TotalTrack" INT NOT NULL\n        )\n        ']
+[2023-09-13T14:46:03.589+0000] {base.py:73} INFO - Using connection ID 'datamart' for task execution.
+[2023-09-13T14:46:03.591+0000] {sql.py:418} INFO - Running statement: DROP TABLE IF EXISTS most_productive_artist, parameters: None
+[2023-09-13T14:46:03.592+0000] {sql.py:418} INFO - Running statement: 
+        CREATE TABLE most_productive_artist (
+        "ArtistId" INT NOT NULL,
+        "ArtistName" VARCHAR(120),
+        "TotalTrack" INT NOT NULL
+        )
+        , parameters: None
+[2023-09-13T14:46:03.595+0000] {generic_transfer.py:105} INFO - Inserting rows into datamart
+[2023-09-13T14:46:03.598+0000] {base.py:73} INFO - Using connection ID 'datamart' for task execution.
+[2023-09-13T14:46:03.622+0000] {sql.py:515} INFO - Done loading. Loaded a total of 233 rows into most_productive_artist
+[2023-09-13T14:46:03.627+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=business_question, task_id=insert_into_most_productive_artist, execution_date=20230913T144600, start_date=20230913T144603, end_date=20230913T144603
+[2023-09-13T14:46:03.675+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-09-13T14:46:03.693+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check

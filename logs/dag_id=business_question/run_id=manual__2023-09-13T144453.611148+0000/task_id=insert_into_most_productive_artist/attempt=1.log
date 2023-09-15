@@ -1,0 +1,45 @@
+[2023-09-13T14:44:56.468+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: business_question.insert_into_most_productive_artist manual__2023-09-13T14:44:53.611148+00:00 [queued]>
+[2023-09-13T14:44:56.473+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: business_question.insert_into_most_productive_artist manual__2023-09-13T14:44:53.611148+00:00 [queued]>
+[2023-09-13T14:44:56.473+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-09-13T14:44:56.483+0000] {taskinstance.py:1382} INFO - Executing <Task(GenericTransfer): insert_into_most_productive_artist> on 2023-09-13 14:44:53.611148+00:00
+[2023-09-13T14:44:56.487+0000] {standard_task_runner.py:57} INFO - Started process 2408 to run task
+[2023-09-13T14:44:56.489+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'business_question', 'insert_into_most_productive_artist', 'manual__2023-09-13T14:44:53.611148+00:00', '--job-id', '164', '--raw', '--subdir', 'DAGS_FOLDER/business_question.py', '--cfg-path', '/tmp/tmpfs8e6ahf']
+[2023-09-13T14:44:56.491+0000] {standard_task_runner.py:85} INFO - Job 164: Subtask insert_into_most_productive_artist
+[2023-09-13T14:44:56.520+0000] {task_command.py:415} INFO - Running <TaskInstance: business_question.insert_into_most_productive_artist manual__2023-09-13T14:44:53.611148+00:00 [running]> on host bdff3168b881
+[2023-09-13T14:44:56.571+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Aditiya Rahman' AIRFLOW_CTX_DAG_ID='business_question' AIRFLOW_CTX_TASK_ID='insert_into_most_productive_artist' AIRFLOW_CTX_EXECUTION_DATE='2023-09-13T14:44:53.611148+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-09-13T14:44:53.611148+00:00'
+[2023-09-13T14:44:56.577+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-13T14:44:56.587+0000] {base.py:73} INFO - Using connection ID 'datamart' for task execution.
+[2023-09-13T14:44:56.587+0000] {generic_transfer.py:77} INFO - Extracting data from datawarehouse
+[2023-09-13T14:44:56.588+0000] {generic_transfer.py:78} INFO - Executing: 
+ 
+SELECT "ArtistId", "ArtistName", COUNT("TrackId")
+FROM "songs"
+GROUP BY "GenreName", "ArtistId", "ArtistName"
+ORDER BY "TotalTrack" DESC
+[2023-09-13T14:44:56.591+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-13T14:44:56.593+0000] {sql.py:418} INFO - Running statement: 
+SELECT "ArtistId", "ArtistName", COUNT("TrackId")
+FROM "songs"
+GROUP BY "GenreName", "ArtistId", "ArtistName"
+ORDER BY "TotalTrack" DESC, parameters: None
+[2023-09-13T14:44:56.594+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/generic_transfer.py", line 86, in execute
+    results = get_records(self.sql)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 255, in get_records
+    return self.run(sql=sql, parameters=parameters, handler=fetch_all_handler)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 392, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 423, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.UndefinedColumn: column "TotalTrack" does not exist
+LINE 5: ORDER BY "TotalTrack" DESC
+                 ^
+
+[2023-09-13T14:44:56.599+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=business_question, task_id=insert_into_most_productive_artist, execution_date=20230913T144453, start_date=20230913T144456, end_date=20230913T144456
+[2023-09-13T14:44:56.608+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 164 for task insert_into_most_productive_artist (column "TotalTrack" does not exist
+LINE 5: ORDER BY "TotalTrack" DESC
+                 ^
+; 2408)
+[2023-09-13T14:44:56.621+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-09-13T14:44:56.637+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

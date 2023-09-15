@@ -1,0 +1,73 @@
+[2023-09-08T14:15:29.759+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: artis_revenue.insert_into_dwh manual__2023-09-08T14:15:27.525833+00:00 [queued]>
+[2023-09-08T14:15:29.765+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: artis_revenue.insert_into_dwh manual__2023-09-08T14:15:27.525833+00:00 [queued]>
+[2023-09-08T14:15:29.765+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-09-08T14:15:29.779+0000] {taskinstance.py:1382} INFO - Executing <Task(GenericTransfer): insert_into_dwh> on 2023-09-08 14:15:27.525833+00:00
+[2023-09-08T14:15:29.783+0000] {standard_task_runner.py:57} INFO - Started process 558 to run task
+[2023-09-08T14:15:29.787+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'artis_revenue', 'insert_into_dwh', 'manual__2023-09-08T14:15:27.525833+00:00', '--job-id', '55', '--raw', '--subdir', 'DAGS_FOLDER/artist_revenue.py', '--cfg-path', '/tmp/tmp7wojycr7']
+[2023-09-08T14:15:29.789+0000] {standard_task_runner.py:85} INFO - Job 55: Subtask insert_into_dwh
+[2023-09-08T14:15:29.825+0000] {task_command.py:415} INFO - Running <TaskInstance: artis_revenue.insert_into_dwh manual__2023-09-08T14:15:27.525833+00:00 [running]> on host 80a7ead3f1b6
+[2023-09-08T14:15:29.877+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Aditiya Rahman' AIRFLOW_CTX_DAG_ID='artis_revenue' AIRFLOW_CTX_TASK_ID='insert_into_dwh' AIRFLOW_CTX_EXECUTION_DATE='2023-09-08T14:15:27.525833+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-09-08T14:15:27.525833+00:00'
+[2023-09-08T14:15:29.882+0000] {base.py:73} INFO - Using connection ID 'postgres' for task execution.
+[2023-09-08T14:15:29.886+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-08T14:15:29.887+0000] {generic_transfer.py:77} INFO - Extracting data from postgres
+[2023-09-08T14:15:29.887+0000] {generic_transfer.py:78} INFO - Executing: 
+ 
+INSERT INTO "artist_revenue"
+SELECT a."ArtistId", 
+       a."Name", 
+       b."Title", 
+       c."Name", 
+       (d."Quantity" * d."UnitPrice"),
+       d."InvoiceLineId",
+       e."InvoiceId",
+       e."InvoiceDate"
+FROM "Artist" a
+JOIN "Album" b
+ON a."ArtistId" = b."ArtistId"
+JOIN "Track" c
+ON b."AlbumId" = c."AlbumId"
+JOIN "InvoiceLine" d
+ON c."TrackId" = d."TrackId"
+JOIN "Invoice" e
+ON d."InvoiceId" = e."InvoiceId"
+[2023-09-08T14:15:29.890+0000] {base.py:73} INFO - Using connection ID 'postgres' for task execution.
+[2023-09-08T14:15:29.892+0000] {sql.py:418} INFO - Running statement: 
+INSERT INTO "artist_revenue"
+SELECT a."ArtistId", 
+       a."Name", 
+       b."Title", 
+       c."Name", 
+       (d."Quantity" * d."UnitPrice"),
+       d."InvoiceLineId",
+       e."InvoiceId",
+       e."InvoiceDate"
+FROM "Artist" a
+JOIN "Album" b
+ON a."ArtistId" = b."ArtistId"
+JOIN "Track" c
+ON b."AlbumId" = c."AlbumId"
+JOIN "InvoiceLine" d
+ON c."TrackId" = d."TrackId"
+JOIN "Invoice" e
+ON d."InvoiceId" = e."InvoiceId", parameters: None
+[2023-09-08T14:15:29.893+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/generic_transfer.py", line 86, in execute
+    results = get_records(self.sql)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 255, in get_records
+    return self.run(sql=sql, parameters=parameters, handler=fetch_all_handler)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 392, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 423, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.UndefinedTable: relation "artist_revenue" does not exist
+LINE 2: INSERT INTO "artist_revenue"
+                    ^
+
+[2023-09-08T14:15:29.898+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=artis_revenue, task_id=insert_into_dwh, execution_date=20230908T141527, start_date=20230908T141529, end_date=20230908T141529
+[2023-09-08T14:15:29.908+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 55 for task insert_into_dwh (relation "artist_revenue" does not exist
+LINE 2: INSERT INTO "artist_revenue"
+                    ^
+; 558)
+[2023-09-08T14:15:29.918+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-09-08T14:15:29.928+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

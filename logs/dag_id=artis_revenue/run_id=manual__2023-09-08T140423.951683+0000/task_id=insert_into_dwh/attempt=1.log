@@ -1,0 +1,43 @@
+[2023-09-08T14:04:25.176+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: artis_revenue.insert_into_dwh manual__2023-09-08T14:04:23.951683+00:00 [queued]>
+[2023-09-08T14:04:25.181+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: artis_revenue.insert_into_dwh manual__2023-09-08T14:04:23.951683+00:00 [queued]>
+[2023-09-08T14:04:25.181+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-09-08T14:04:25.191+0000] {taskinstance.py:1382} INFO - Executing <Task(CreateTableIfNotExist): insert_into_dwh> on 2023-09-08 14:04:23.951683+00:00
+[2023-09-08T14:04:25.195+0000] {standard_task_runner.py:57} INFO - Started process 377 to run task
+[2023-09-08T14:04:25.197+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'artis_revenue', 'insert_into_dwh', 'manual__2023-09-08T14:04:23.951683+00:00', '--job-id', '51', '--raw', '--subdir', 'DAGS_FOLDER/artist_revenue.py', '--cfg-path', '/tmp/tmp9aix68en']
+[2023-09-08T14:04:25.199+0000] {standard_task_runner.py:85} INFO - Job 51: Subtask insert_into_dwh
+[2023-09-08T14:04:25.228+0000] {task_command.py:415} INFO - Running <TaskInstance: artis_revenue.insert_into_dwh manual__2023-09-08T14:04:23.951683+00:00 [running]> on host 80a7ead3f1b6
+[2023-09-08T14:04:25.273+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Aditiya Rahman' AIRFLOW_CTX_DAG_ID='artis_revenue' AIRFLOW_CTX_TASK_ID='insert_into_dwh' AIRFLOW_CTX_EXECUTION_DATE='2023-09-08T14:04:23.951683+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-09-08T14:04:23.951683+00:00'
+[2023-09-08T14:04:25.278+0000] {base.py:73} INFO - Using connection ID 'postgres' for task execution.
+[2023-09-08T14:04:25.280+0000] {sql.py:418} INFO - Running statement: 
+SELECT a."ArtistId", 
+       a."Name", 
+       b."Title", 
+       c."Name", 
+       (d."Quantity" * d."UnitPrice"),
+       d."InvoiceLineId",
+       e."InvoiceId",
+       e."InvoiceDate"
+FROM "Artist" a
+JOIN "Album" b
+ON a."ArtistId" = b."ArtistId"
+JOIN "Track" c
+ON b."AlbumId" = c."AlbumId"
+JOIN "InvoiceLine" d
+ON c."TrackId" = d."TrackId"
+JOIN "Invoice" e
+ON d."InvoiceId" = e."InvoiceId"
+, parameters: None
+[2023-09-08T14:04:25.290+0000] {sql.py:427} INFO - Rows affected: 2240
+[2023-09-08T14:04:25.294+0000] {base.py:73} INFO - Using connection ID 'postgres' for task execution.
+[2023-09-08T14:04:25.296+0000] {sql.py:418} INFO - Running statement: SELECT column_name, data_type FROM information_schema.columns WHERE table_name = 'result', parameters: None
+[2023-09-08T14:04:25.306+0000] {sql.py:427} INFO - Rows affected: 0
+[2023-09-08T14:04:25.310+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-08T14:04:25.334+0000] {sql.py:418} INFO - Running statement: SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'artist_revenue'), parameters: None
+[2023-09-08T14:04:25.366+0000] {sql.py:427} INFO - Rows affected: 1
+[2023-09-08T14:04:25.367+0000] {create_table_operator.py:36} INFO - Table 'artist_revenue' does not exist. Creating table...
+[2023-09-08T14:04:25.371+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-08T14:04:25.372+0000] {sql.py:418} INFO - Running statement: CREATE TABLE IF NOT EXISTS artist_revenue ();, parameters: None
+[2023-09-08T14:04:25.397+0000] {create_table_operator.py:38} INFO - Table 'artist_revenue' created successfully.
+[2023-09-08T14:04:25.402+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=artis_revenue, task_id=insert_into_dwh, execution_date=20230908T140423, start_date=20230908T140425, end_date=20230908T140425
+[2023-09-08T14:04:25.449+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-09-08T14:04:25.462+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

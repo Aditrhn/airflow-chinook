@@ -1,0 +1,83 @@
+[2023-09-10T13:19:42.621+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: transactions.insert_into_transactions manual__2023-09-10T13:14:40.256896+00:00 [queued]>
+[2023-09-10T13:19:42.628+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: transactions.insert_into_transactions manual__2023-09-10T13:14:40.256896+00:00 [queued]>
+[2023-09-10T13:19:42.628+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2023-09-10T13:19:42.638+0000] {taskinstance.py:1382} INFO - Executing <Task(GenericTransfer): insert_into_transactions> on 2023-09-10 13:14:40.256896+00:00
+[2023-09-10T13:19:42.642+0000] {standard_task_runner.py:57} INFO - Started process 4133 to run task
+[2023-09-10T13:19:42.644+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'transactions', 'insert_into_transactions', 'manual__2023-09-10T13:14:40.256896+00:00', '--job-id', '111', '--raw', '--subdir', 'DAGS_FOLDER/transactions.py', '--cfg-path', '/tmp/tmpx86ey_vo']
+[2023-09-10T13:19:42.646+0000] {standard_task_runner.py:85} INFO - Job 111: Subtask insert_into_transactions
+[2023-09-10T13:19:42.675+0000] {task_command.py:415} INFO - Running <TaskInstance: transactions.insert_into_transactions manual__2023-09-10T13:14:40.256896+00:00 [running]> on host 80a7ead3f1b6
+[2023-09-10T13:19:42.724+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Aditiya Rahman' AIRFLOW_CTX_DAG_ID='transactions' AIRFLOW_CTX_TASK_ID='insert_into_transactions' AIRFLOW_CTX_EXECUTION_DATE='2023-09-10T13:14:40.256896+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-09-10T13:14:40.256896+00:00'
+[2023-09-10T13:19:42.729+0000] {base.py:73} INFO - Using connection ID 'postgres' for task execution.
+[2023-09-10T13:19:42.739+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-10T13:19:42.739+0000] {generic_transfer.py:77} INFO - Extracting data from postgres
+[2023-09-10T13:19:42.740+0000] {generic_transfer.py:78} INFO - Executing: 
+ 
+SELECT a."TrackId",
+       b."InvoiceId",
+       d."CustomerId",
+       c."InvoiceDate",
+       c."Total",
+       concat(d."FirstName", ' ', d."LastName"),
+       d."Address",
+       d."City",
+       d."State",
+       d."Country",
+       d."PostalCode",
+       d."Email"
+FROM "Track" a 
+JOIN "InvoiceLine" b
+ON  a."TrackId" = b."TrackId"
+JOIN "Invoice" c
+ON  b."InvoiceId" = c."InvoiceId"
+JOIN "Customer" d
+ON c."CustomerId" = d."CustomerId"
+[2023-09-10T13:19:42.743+0000] {base.py:73} INFO - Using connection ID 'postgres' for task execution.
+[2023-09-10T13:19:42.745+0000] {sql.py:418} INFO - Running statement: 
+SELECT a."TrackId",
+       b."InvoiceId",
+       d."CustomerId",
+       c."InvoiceDate",
+       c."Total",
+       concat(d."FirstName", ' ', d."LastName"),
+       d."Address",
+       d."City",
+       d."State",
+       d."Country",
+       d."PostalCode",
+       d."Email"
+FROM "Track" a 
+JOIN "InvoiceLine" b
+ON  a."TrackId" = b."TrackId"
+JOIN "Invoice" c
+ON  b."InvoiceId" = c."InvoiceId"
+JOIN "Customer" d
+ON c."CustomerId" = d."CustomerId", parameters: None
+[2023-09-10T13:19:42.749+0000] {sql.py:427} INFO - Rows affected: 2240
+[2023-09-10T13:19:42.753+0000] {generic_transfer.py:95} INFO - Running preoperator
+[2023-09-10T13:19:42.753+0000] {generic_transfer.py:96} INFO - ['DROP TABLE IF EXISTS transactions', '\n        CREATE TABLE transactions (\n        Track_Id INT NOT NULL,\n        Invoice_Id INT NOT NULL,\n        Customer_Id INT NOT NULL,\n        Invoice_Date TIMESTAMP NOT NULL,\n        Total NUMERIC(10,2) NOT NULL,\n        Full_Name VARCHAR(50) NOT NULL,\n        "Address" VARCHAR(70),\n        "City" VARCHAR(40),\n        "State" VARCHAR(40),\n        "Country" VARCHAR(40),\n        "PostalCode" VARCHAR(10),\n        "Email" VARCHAR(60) NOT NULL\n        )\n        ']
+[2023-09-10T13:19:42.757+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-10T13:19:42.760+0000] {sql.py:418} INFO - Running statement: DROP TABLE IF EXISTS transactions, parameters: None
+[2023-09-10T13:19:42.760+0000] {sql.py:418} INFO - Running statement: 
+        CREATE TABLE transactions (
+        Track_Id INT NOT NULL,
+        Invoice_Id INT NOT NULL,
+        Customer_Id INT NOT NULL,
+        Invoice_Date TIMESTAMP NOT NULL,
+        Total NUMERIC(10,2) NOT NULL,
+        Full_Name VARCHAR(50) NOT NULL,
+        "Address" VARCHAR(70),
+        "City" VARCHAR(40),
+        "State" VARCHAR(40),
+        "Country" VARCHAR(40),
+        "PostalCode" VARCHAR(10),
+        "Email" VARCHAR(60) NOT NULL
+        )
+        , parameters: None
+[2023-09-10T13:19:42.765+0000] {generic_transfer.py:105} INFO - Inserting rows into datawarehouse
+[2023-09-10T13:19:42.769+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-10T13:19:42.896+0000] {sql.py:512} INFO - Loaded 1000 rows into transactions so far
+[2023-09-10T13:19:43.021+0000] {sql.py:512} INFO - Loaded 2000 rows into transactions so far
+[2023-09-10T13:19:43.052+0000] {sql.py:515} INFO - Done loading. Loaded a total of 2240 rows into transactions
+[2023-09-10T13:19:43.059+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=transactions, task_id=insert_into_transactions, execution_date=20230910T131440, start_date=20230910T131942, end_date=20230910T131943
+[2023-09-10T13:19:43.097+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-09-10T13:19:43.108+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

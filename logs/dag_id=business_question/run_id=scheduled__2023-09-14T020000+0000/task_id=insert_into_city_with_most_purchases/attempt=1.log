@@ -1,0 +1,41 @@
+[2023-09-15T13:34:44.600+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: business_question.insert_into_city_with_most_purchases scheduled__2023-09-14T02:00:00+00:00 [queued]>
+[2023-09-15T13:34:44.605+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: business_question.insert_into_city_with_most_purchases scheduled__2023-09-14T02:00:00+00:00 [queued]>
+[2023-09-15T13:34:44.605+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-09-15T13:34:44.616+0000] {taskinstance.py:1382} INFO - Executing <Task(GenericTransfer): insert_into_city_with_most_purchases> on 2023-09-14 02:00:00+00:00
+[2023-09-15T13:34:44.622+0000] {standard_task_runner.py:57} INFO - Started process 104 to run task
+[2023-09-15T13:34:44.624+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'business_question', 'insert_into_city_with_most_purchases', 'scheduled__2023-09-14T02:00:00+00:00', '--job-id', '189', '--raw', '--subdir', 'DAGS_FOLDER/business_question.py', '--cfg-path', '/tmp/tmp625spg7c']
+[2023-09-15T13:34:44.627+0000] {standard_task_runner.py:85} INFO - Job 189: Subtask insert_into_city_with_most_purchases
+[2023-09-15T13:34:44.658+0000] {task_command.py:415} INFO - Running <TaskInstance: business_question.insert_into_city_with_most_purchases scheduled__2023-09-14T02:00:00+00:00 [running]> on host bdff3168b881
+[2023-09-15T13:34:44.710+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Aditiya Rahman' AIRFLOW_CTX_DAG_ID='business_question' AIRFLOW_CTX_TASK_ID='insert_into_city_with_most_purchases' AIRFLOW_CTX_EXECUTION_DATE='2023-09-14T02:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-09-14T02:00:00+00:00'
+[2023-09-15T13:34:44.715+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-15T13:34:44.726+0000] {base.py:73} INFO - Using connection ID 'datamart' for task execution.
+[2023-09-15T13:34:44.726+0000] {generic_transfer.py:77} INFO - Extracting data from datawarehouse
+[2023-09-15T13:34:44.727+0000] {generic_transfer.py:78} INFO - Executing: 
+ 
+SELECT "City", COUNT("InvoiceId") AS "TotalPurchases"
+FROM "transactions"
+GROUP BY "City"
+ORDER BY "TotalPurchases" DESC
+[2023-09-15T13:34:44.730+0000] {base.py:73} INFO - Using connection ID 'datawarehouse' for task execution.
+[2023-09-15T13:34:44.732+0000] {sql.py:418} INFO - Running statement: 
+SELECT "City", COUNT("InvoiceId") AS "TotalPurchases"
+FROM "transactions"
+GROUP BY "City"
+ORDER BY "TotalPurchases" DESC, parameters: None
+[2023-09-15T13:34:44.734+0000] {sql.py:427} INFO - Rows affected: 53
+[2023-09-15T13:34:44.734+0000] {generic_transfer.py:95} INFO - Running preoperator
+[2023-09-15T13:34:44.734+0000] {generic_transfer.py:96} INFO - ['DROP TABLE IF EXISTS city_with_most_purchases', '\n        CREATE TABLE city_with_most_purchases (\n        "City" VARCHAR(40),\n        "TotalPurchase" INT NOT NULL\n        )\n        ']
+[2023-09-15T13:34:44.738+0000] {base.py:73} INFO - Using connection ID 'datamart' for task execution.
+[2023-09-15T13:34:44.740+0000] {sql.py:418} INFO - Running statement: DROP TABLE IF EXISTS city_with_most_purchases, parameters: None
+[2023-09-15T13:34:44.741+0000] {sql.py:418} INFO - Running statement: 
+        CREATE TABLE city_with_most_purchases (
+        "City" VARCHAR(40),
+        "TotalPurchase" INT NOT NULL
+        )
+        , parameters: None
+[2023-09-15T13:34:44.745+0000] {generic_transfer.py:105} INFO - Inserting rows into datamart
+[2023-09-15T13:34:44.749+0000] {base.py:73} INFO - Using connection ID 'datamart' for task execution.
+[2023-09-15T13:34:44.759+0000] {sql.py:515} INFO - Done loading. Loaded a total of 53 rows into city_with_most_purchases
+[2023-09-15T13:34:44.765+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=business_question, task_id=insert_into_city_with_most_purchases, execution_date=20230914T020000, start_date=20230915T133444, end_date=20230915T133444
+[2023-09-15T13:34:44.796+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-09-15T13:34:44.808+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check
